@@ -1,0 +1,46 @@
+{
+  "XMI.header": {
+    "XMI.documentation": {
+      "XMI.exporter": "Enterprise Architect",
+      "XMI.exporterVersion": "2.5"
+    }
+  },
+  "XMI.content": {
+    "{omg.org/UML1.3}Model": {
+      "{omg.org/UML1.3}Namespace.ownedElement": {
+        "{omg.org/UML1.3}Class": null,
+        "{omg.org/UML1.3}Package": {
+          "{omg.org/UML1.3}ModelElement.taggedValue": {
+            "{omg.org/UML1.3}TaggedValue": null
+          },
+          "{omg.org/UML1.3}Namespace.ownedElement": {
+            "{omg.org/UML1.3}Collaboration": {
+              "{omg.org/UML1.3}Namespace.ownedElement": {
+                "{omg.org/UML1.3}ClassifierRole": {
+                  "{omg.org/UML1.3}ModelElement.taggedValue": {
+                    "{omg.org/UML1.3}TaggedValue": null
+                  }
+                }
+              },
+              "{omg.org/UML1.3}Collaboration.interaction": null
+            },
+            "{omg.org/UML1.3}Actor": {
+              "{omg.org/UML1.3}ModelElement.taggedValue": {
+                "{omg.org/UML1.3}TaggedValue": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "{omg.org/UML1.3}Diagram": {
+      "{omg.org/UML1.3}ModelElement.taggedValue": {
+        "{omg.org/UML1.3}TaggedValue": null
+      },
+      "{omg.org/UML1.3}Diagram.element": {
+        "{omg.org/UML1.3}DiagramElement": null
+      }
+    }
+  },
+  "XMI.extensions": null
+}

@@ -1,0 +1,314 @@
+{
+  "diagram": {
+    "id": "ecommerce-diagram",
+    "name": "Sistema E-commerce",
+    "classes": [
+      {
+        "id": "usuario-1",
+        "name": "Usuario",
+        "attributes": [
+          {
+            "id": "attr-u1",
+            "name": "id",
+            "type": "Long",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-u2",
+            "name": "nombre",
+            "type": "String",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-u3",
+            "name": "email",
+            "type": "String",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-u4",
+            "name": "password",
+            "type": "String",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-u5",
+            "name": "direccion",
+            "type": "String",
+            "visibility": "private"
+          }
+        ],
+        "position": { "x": 100, "y": 100 }
+      },
+      {
+        "id": "producto-1",
+        "name": "Producto",
+        "attributes": [
+          {
+            "id": "attr-p1",
+            "name": "nombre",
+            "type": "String",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-p2",
+            "name": "descripcion",
+            "type": "String",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-p3",
+            "name": "precio",
+            "type": "Double",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-p4",
+            "name": "stock",
+            "type": "Integer",
+            "visibility": "private"
+          }
+        ],
+        "position": { "x": 500, "y": 100 }
+      },
+      {
+        "id": "categoria-1",
+        "name": "Categoria",
+        "attributes": [
+          {
+            "id": "attr-c1",
+            "name": "nombre",
+            "type": "String",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-c2",
+            "name": "descripcion",
+            "type": "String",
+            "visibility": "private"
+          }
+        ],
+        "position": { "x": 800, "y": 100 }
+      },
+      {
+        "id": "pedido-1",
+        "name": "Pedido",
+        "attributes": [
+          {
+            "id": "attr-pe1",
+            "name": "fechaPedido",
+            "type": "LocalDateTime",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-pe2",
+            "name": "estado",
+            "type": "String",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-pe3",
+            "name": "total",
+            "type": "Double",
+            "visibility": "private"
+          }
+        ],
+        "position": { "x": 100, "y": 400 }
+      },
+      {
+        "id": "detallepedido-1",
+        "name": "DetallePedido",
+        "attributes": [
+          {
+            "id": "attr-d1",
+            "name": "cantidad",
+            "type": "Integer",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-d2",
+            "name": "precioUnitario",
+            "type": "Double",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-d3",
+            "name": "subtotal",
+            "type": "Double",
+            "visibility": "private"
+          }
+        ],
+        "position": { "x": 500, "y": 400 }
+      },
+      {
+        "id": "carrito-1",
+        "name": "ItemCarrito",
+        "stereotype": "<<association>>",
+        "attributes": [
+          {
+            "id": "attr-car1",
+            "name": "cantidad",
+            "type": "Integer",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-car2",
+            "name": "fechaAgregado",
+            "type": "LocalDateTime",
+            "visibility": "private"
+          }
+        ],
+        "position": { "x": 300, "y": 250 }
+      },
+      {
+        "id": "resena-1",
+        "name": "Resena",
+        "attributes": [
+          {
+            "id": "attr-r1",
+            "name": "calificacion",
+            "type": "Integer",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-r2",
+            "name": "comentario",
+            "type": "String",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-r3",
+            "name": "fecha",
+            "type": "LocalDateTime",
+            "visibility": "private"
+          }
+        ],
+        "position": { "x": 300, "y": 550 }
+      },
+      {
+        "id": "pago-1",
+        "name": "Pago",
+        "attributes": [
+          {
+            "id": "attr-pag1",
+            "name": "monto",
+            "type": "Double",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-pag2",
+            "name": "metodoPago",
+            "type": "String",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-pag3",
+            "name": "fechaPago",
+            "type": "LocalDateTime",
+            "visibility": "private"
+          },
+          {
+            "id": "attr-pag4",
+            "name": "estado",
+            "type": "String",
+            "visibility": "private"
+          }
+        ],
+        "position": { "x": 100, "y": 700 }
+      }
+    ],
+    "relations": [
+      {
+        "id": "rel-1",
+        "fromClassId": "usuario-1",
+        "toClassId": "pedido-1",
+        "type": "association",
+        "label": "realiza",
+        "multiplicity": {
+          "from": "1",
+          "to": "*"
+        }
+      },
+      {
+        "id": "rel-2",
+        "fromClassId": "usuario-1",
+        "toClassId": "producto-1",
+        "type": "associationClass",
+        "label": "carrito",
+        "associationClassId": "carrito-1",
+        "multiplicity": {
+          "from": "*",
+          "to": "*"
+        }
+      },
+      {
+        "id": "rel-3",
+        "fromClassId": "pedido-1",
+        "toClassId": "detallepedido-1",
+        "type": "composition",
+        "label": "contiene",
+        "multiplicity": {
+          "from": "1",
+          "to": "*"
+        }
+      },
+      {
+        "id": "rel-4",
+        "fromClassId": "detallepedido-1",
+        "toClassId": "producto-1",
+        "type": "association",
+        "label": "referencia",
+        "multiplicity": {
+          "from": "*",
+          "to": "1"
+        }
+      },
+      {
+        "id": "rel-5",
+        "fromClassId": "producto-1",
+        "toClassId": "categoria-1",
+        "type": "association",
+        "label": "pertenece a",
+        "multiplicity": {
+          "from": "*",
+          "to": "1"
+        }
+      },
+      {
+        "id": "rel-6",
+        "fromClassId": "usuario-1",
+        "toClassId": "resena-1",
+        "type": "association",
+        "label": "escribe",
+        "multiplicity": {
+          "from": "1",
+          "to": "*"
+        }
+      },
+      {
+        "id": "rel-7",
+        "fromClassId": "resena-1",
+        "toClassId": "producto-1",
+        "type": "association",
+        "label": "sobre",
+        "multiplicity": {
+          "from": "*",
+          "to": "1"
+        }
+      },
+      {
+        "id": "rel-8",
+        "fromClassId": "pedido-1",
+        "toClassId": "pago-1",
+        "type": "association",
+        "label": "tiene",
+        "multiplicity": {
+          "from": "1",
+          "to": "1"
+        }
+      }
+    ]
+  },
+  "projectName": "ecommerce",
+  "basePackage": "com.ejemplo"
+}
