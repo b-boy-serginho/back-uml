@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Patch, Post } from "@nestjs/common";
 import { DiagramService } from "./diagram.service";
 import { DiagramDto } from "./dto/diagram.dto";
 
@@ -34,6 +34,11 @@ export class DiagramController {
 
     @Post(':id')
     async edit(@Param('id') id: string, @Body() diagramData: DiagramDto) {
+        return await this.diagramService.edit(id, diagramData);
+    }
+
+    @Patch(':id')
+    async update(@Param('id') id: string, @Body() diagramData: DiagramDto) {
         return await this.diagramService.edit(id, diagramData);
     }
 
